@@ -1,0 +1,63 @@
+apply plugin: 'application'
+
+mainClassName = "docsorgz.DocsOrgz"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.25'
+    compile 'org.slf4j:jcl-over-slf4j:1.7.25'
+    compile 'ch.qos.logback:logback-classic:1.2.3'
+    
+    compile 'org.springframework.cloud:spring-cloud-gcp-starter-vision:1.2.8.RELEASE'
+   	
+   	// https://mvnrepository.com/artifact/com.aspose/aspose-ocr
+   	// https://mvnrepository.com/artifact/com.asprise.ocr/java-ocr-api
+	compile 'com.asprise.ocr:java-ocr-api:15.3.0.3'
+   	compile 'net.sourceforge.javaocr.plugins:javaocr-plugin-moment:1.0'
+		
+	compile 'net.sourceforge.javaocr.plugins:javaocr-plugin-cluster:1.0'
+	compile 'net.sourceforge.javaocr.plugins:javaocr-plugin-fir:1.0'
+	compile 'net.sourceforge.javaocr.plugins:javaocr-plugin-morphology:1.0'
+	compile 'net.sourceforge.javaocr.plugins:javaocr-plugin-awt:1.0'
+	compile 'net.sourceforge.javaocr:javaocr-core:1.0'
+			
+	//compile 'com.aspose:aspose-ocr:24.11.1'
+   	//compile 'com.aspose:aspose-ocr-gpu:20.11'
+   	
+   	//compile ('org.apache.pdfbox:pdfbox:2.0.32') {
+	compile ('org.apache.pdfbox:pdfbox:3.0.3') {	
+		exclude module: 'commons-logging'
+   	}
+   	
+   	//compile 'org.bytedeco.javacpp-presets:tesseract-platform:3.04.01-1.3'
+   	
+   	//compile 'net.sourceforge.tess4j:tess4j:3.2.1'
+   	
+	compile 'net.sourceforge.tess4j:tess4j:4.5.1'
+   	
+   	
+   	//compile ('org.apache.pdfbox:jempbox:1.8.17') {
+	//	exclude module: 'commons-logging'
+   	//}
+   	
+   	
+   	
+   	
+   	
+    testCompile 'org.junit.jupiter:junit-jupiter-api:5.2.0'
+    testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.2.0'
+
+    testCompile 'org.junit-pioneer:junit-pioneer:0.1.2'
+    testCompile 'com.google.jimfs:jimfs:1.1'
+    testCompile 'org.assertj:assertj-core:3.11.1'
+}
+
+test {
+    useJUnitPlatform()
+}
